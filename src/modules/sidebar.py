@@ -10,15 +10,16 @@ class Sidebar:
 
     @staticmethod
     def about():
-        about = st.sidebar.expander("🧠 About Robby ")
-        sections = [
-            "#### Robby is an AI chatbot with a conversational memory, designed to allow users to discuss their data in a more intuitive way. 📄",
-            "#### It uses large language models to provide users with natural language interactions about user data content. 🌐",
-            "#### Powered by [Langchain](https://github.com/hwchase17/langchain), [OpenAI](https://platform.openai.com/docs/models/gpt-3-5) and [Streamlit](https://github.com/streamlit/streamlit) ⚡",
-            "#### Source code: [yvann-hub/Robby-chatbot](https://github.com/yvann-hub/Robby-chatbot)",
-        ]
-        for section in sections:
-            about.write(section)
+        # about = st.sidebar.expander("🧠 About Robby ")
+        # sections = [
+        #     "#### Robby is an AI chatbot with a conversational memory, designed to allow users to discuss their data in a more intuitive way. 📄",
+        #     "#### It uses large language models to provide users with natural language interactions about user data content. 🌐",
+        #     "#### Powered by [Langchain](https://github.com/hwchase17/langchain), [OpenAI](https://platform.openai.com/docs/models/gpt-3-5) and [Streamlit](https://github.com/streamlit/streamlit) ⚡",
+        #     "#### Source code: [yvann-hub/Robby-chatbot](https://github.com/yvann-hub/Robby-chatbot)",
+        # ]
+        # for section in sections:
+        #     about.write(section)
+        pass
 
     @staticmethod
     def reset_chat_button():
@@ -27,8 +28,9 @@ class Sidebar:
         st.session_state.setdefault("reset_chat", False)
 
     def model_selector(self):
-        model = st.selectbox(label="Model", options=self.MODEL_OPTIONS)
-        st.session_state["model"] = model
+        # model = st.selectbox(label="Model", options=self.MODEL_OPTIONS)
+        # print("model: ", model)
+        st.session_state["model"] = "gpt-4"
 
     def temperature_slider(self):
         temperature = st.slider(
@@ -41,7 +43,7 @@ class Sidebar:
         st.session_state["temperature"] = temperature
         
     def show_options(self):
-        with st.sidebar.expander("🛠️ Robby's Tools", expanded=False):
+        with st.sidebar.expander("🛠️Tools", expanded=False):
 
             self.reset_chat_button()
             self.model_selector()

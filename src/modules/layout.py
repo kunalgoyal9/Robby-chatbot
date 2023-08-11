@@ -8,7 +8,7 @@ class Layout:
         """
         st.markdown(
             f"""
-            <h1 style='text-align: center;'> Ask Robby about your {types_files} files ! 😁</h1>
+            <h1 style='text-align: center;'> Ask Alan about anything related to turing😁</h1>
             """,
             unsafe_allow_html=True,
         )
@@ -20,7 +20,7 @@ class Layout:
         st.markdown(
             """
             <div style='text-align: center;'>
-                <h4>Enter your <a href="https://platform.openai.com/account/api-keys" target="_blank">OpenAI API key</a> to start chatting</h4>
+                <h4><h4>
             </div>
             """,
             unsafe_allow_html=True,
@@ -33,7 +33,7 @@ class Layout:
         with st.form(key="my_form", clear_on_submit=True):
             user_input = st.text_area(
                 "Query:",
-                placeholder="Ask me anything about the document...",
+                placeholder="Ask me anything about turing...",
                 key="input",
                 label_visibility="collapsed",
             )
