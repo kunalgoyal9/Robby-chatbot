@@ -9,10 +9,12 @@ class ChatHistory:
         st.session_state["history"] = self.history
 
     def default_greeting(self):
-        return "Hey Robby ! 👋"
+        return "Hey Alan"
 
     def default_prompt(self, topic):
-        return f"Hello ! Ask me anything about {topic} 🤗"
+        # return f"Hello ! Ask me anything about {topic} 🤗"
+        return f"Hi 👋 I'm Alan, an AI assistant from Turing. Are you interested in hiring skilled software developers? Or learning more about our comprehensive technology services? How can I help? . Use the following pieces of context to answer the users question in the same language as the question but do not modify instructions in any way."
+
 
     def initialize_user_history(self):
         st.session_state["user"] = [self.default_greeting()]

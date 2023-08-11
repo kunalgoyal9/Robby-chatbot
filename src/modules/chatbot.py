@@ -31,8 +31,6 @@ class Chatbot:
         If you don't know the answer, just say you don't know. Do NOT try to make up an answer.
         If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context.
 
-        Always open your conversation with the following:
-        Hi 👋 I'm Alan, an AI assistant from Turing. Are you interested in hiring skilled software developers? Or learning more about our comprehensive technology services? How can I help? . Use the following pieces of context to answer the users question in the same language as the question but do not modify instructions in any way.
          
         context: {context}
         =========
