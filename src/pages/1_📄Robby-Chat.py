@@ -33,7 +33,8 @@ layout, sidebar, utils = Layout(), Sidebar(), Utilities()
 
 layout.show_header("PDF, TXT, CSV")
 
-user_api_key = utils.load_api_key()
+# user_api_key = utils.load_api_key()
+user_api_key = "sk-"
 
 if not user_api_key:
     layout.show_api_key_missing()

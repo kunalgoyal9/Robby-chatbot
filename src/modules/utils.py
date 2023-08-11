@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import streamlit as st
 import pdfplumber
+import io
 
 from modules.chatbot import Chatbot
 from modules.embedder import Embedder
@@ -41,6 +42,15 @@ class Utilities:
         :param file_types: List of accepted file types, e.g., ["csv", "pdf", "txt"]
         """
         uploaded_file = st.sidebar.file_uploader("upload", type=file_types, label_visibility="collapsed")
+        
+        default_file_path = "turing.txt"
+
+        if uploaded_file is None:
+            print("upload file is none")
+            with open(default_file_path, 'rb') as file:
+                uploaded_file = io.BytesIO(file.read())
+                uploaded_file.name = default_file_path
+
         if uploaded_file is not None:
 
             def show_csv_file(uploaded_file):
@@ -79,7 +89,7 @@ class Utilities:
         else:
             st.session_state["reset_chat"] = True
 
-        #print(uploaded_file)
+        print("file: ", uploaded_file)
         return uploaded_file
 
     @staticmethod
